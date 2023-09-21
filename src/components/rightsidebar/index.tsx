@@ -13,6 +13,7 @@ import Drawer from '@mui/material/Drawer'
 import SearchIcon from '@mui/icons-material/Search'
 
 import UdFQuery from '../../apis/udf'
+import { border } from '@mui/system'
 
 const RightSidebar: React.FC = () => {
     const [udfs, setUDFs] = useState([])
@@ -37,57 +38,16 @@ const RightSidebar: React.FC = () => {
             sx={{
                 width: '20%',
                 '& .MuiDrawer-paper': {
-                    width: '20%',
                     boxSizing: 'border-box',
+                    backgroundColor: (theme) => theme.palette.secondary.light,
+                    borderLeft: 3,
+                    borderColor: (theme) => theme.palette.secondary.main,
+                    position:'relative'
                 },
             }}
             variant="permanent"
             anchor="right"
         >
-            <TextField
-                id="search"
-                type="search"
-                label="Search"
-                value={searchText}
-                sx={{ width: '80%', marginX: 'auto', marginY: '5px' }}
-                size="small"
-                onChange={(e) => {
-                    setSearchText(e.target.value)
-                }}
-                InputProps={{
-                    sx: { borderRadius: 2 },
-                    endAdornment: (
-                        <InputAdornment position="end">
-                            <SearchIcon />
-                        </InputAdornment>
-                    ),
-                }}
-            />
-
-            <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-                <Divider />
-                {udfs
-                    .filter(
-                        (udf: any) =>
-                            udf &&
-                            udf.name
-                                .toLowerCase()
-                                .includes(searchText.toLowerCase())
-                    )
-                    .map((udf: any) => (
-                        <>
-                            <ListItem key={udf.name}>
-                                <ListItemButton>
-                                    <ListItemText
-                                        id={udf.name}
-                                        primary={`${udf.name}`}
-                                    />
-                                </ListItemButton>
-                            </ListItem>
-                            <Divider />
-                        </>
-                    ))}
-            </List>
         </Drawer>
     )
 }

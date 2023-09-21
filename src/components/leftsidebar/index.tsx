@@ -9,14 +9,16 @@ import {
 } from '@mui/material'
 
 const LeftSidebar: React.FC = () => {
+
     return (
         <Drawer
             sx={{
                 width: '10%',
                 '& .MuiDrawer-paper': {
-                    width: '10%',
                     boxSizing: 'border-box',
-                    backgroundColor: '#f56522',
+                    backgroundColor: (theme) => theme.palette.primary.light,//'#f56522',
+                    position:'relative',
+                    color: '#FFFFFF',
                 },
             }}
             variant="permanent"
