@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Box} from '@mui/material'
+import { Box } from '@mui/material'
 
 import LeftSidebar from '../../components/leftsidebar'
 import RightSidebar from '../../components/rightsidebar'
