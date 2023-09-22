@@ -47,7 +47,7 @@ const QueryEditor: React.FC<any> = ({ content, setContent, setResp }) => {
                     RUN
                 </Button>
             </Toolbar>
-            {/* <Box
+            <Box
                 onClick={(e) => {
                     document.getElementById('sqlEditor')?.focus()
                 }}
@@ -71,12 +71,12 @@ const QueryEditor: React.FC<any> = ({ content, setContent, setResp }) => {
                         color: 'black',
                     }}
                 />
-            </Box> */}
-        <MonacoEditor
+            </Box>
+        {/* <MonacoEditor
         height="50vh"
         // language="mysql"
         options={options}
-      />
+      /> */}
         </Paper>
     )
 }
