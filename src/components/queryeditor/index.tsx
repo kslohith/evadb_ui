@@ -1,7 +1,8 @@
 import React from 'react'
-import { Toolbar, Paper, Button } from '@mui/material'
-import MonacoEditor, { monaco } from 'react-monaco-editor'
-
+import { Toolbar, Paper, Button } from '@mui/material';
+import MonacoEditor, { monaco } from 'react-monaco-editor';
+import PlayIcon from '@mui/icons-material/PlayArrow';
+import DatabaseIcon from '@mui/icons-material/DataObject';
 import SQLQuery from '../../apis/sqlquery'
 
 const options: monaco.editor.IStandaloneEditorConstructionOptions = {
@@ -41,17 +42,26 @@ const QueryEditor: React.FC<any> = ({ content, setContent, setResp }) => {
                 }}
             >
                 <Button
+                        variant="outlined"
+                        sx={{ position: 'absolute' , left: '40px', textTransform: 'none' }}
+                        startIcon={<DatabaseIcon />}
+                    >
+                    Add Data Source 
+                </Button>
+                <Button
                     variant="contained"
-                    sx={{ background: '#615c5c' }}
+                    sx={{ background: '#615c5c', position: 'absolute' , left: '240px',textTransform: 'none'  }}
                     onClick={() => {
                         useSQLQuery.mutate(content)
                     }}
+                    startIcon={<PlayIcon />}
                 >
-                    RUN
+                    Run 
                 </Button>
+                    <Button variant="contained" style={{ backgroundColor: '#0063cc', textTransform: 'none'  }}>Explore UDF</Button>
             </Toolbar>
             <MonacoEditor
-                height="50vh"
+                height="30vh"
                 language="sql"
                 options={options}
                 value={content}

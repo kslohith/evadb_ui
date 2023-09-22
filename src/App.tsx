@@ -9,18 +9,14 @@ const queryClient = new QueryClient()
 function App() {
     return (
         <QueryClientProvider client={queryClient}>
-            <AppBar position="sticky" sx={{ zIndex: 100000 }}>
-                <Toolbar
-                    sx={{ background: (theme) => theme.palette.primary.light }}
-                >
-                    EvaDB
-                </Toolbar>
-            </AppBar>
-            <Paper
-                sx={{ background: (theme) => theme.palette.secondary.light }}
-            >
-                <Playground />
-            </Paper>
+          <AppBar position="sticky" sx={{zIndex: 100000}}>
+            {/* <Toolbar sx={{background: (theme) => theme.palette.primary.light}}>
+              EvaDB 
+            </Toolbar> */}
+          </AppBar> 
+          <Paper sx={{background: (theme) => theme.palette.secondary.light}}>
+            <Playground />
+          </Paper>
         </QueryClientProvider>
     )
 }
