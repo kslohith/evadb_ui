@@ -1,0 +1,17 @@
+.no-data-message {
+    display: flex; /* Center contents vertically */
+    align-items: center; /* Center contents vertically */
+    justify-content: center; /* Center contents horizontally */
+  }
+  
+  .center-content {
+    display: flex; /* Center contents vertically */
+    align-items: center; /* Center contents vertically */
+    justify-content: center; /* Center contents horizontally */
+  }
+  
+  .icon {
+    font-size: 48px; /* Adjust the icon size as needed */
+    margin-right: 8px; /* Add some space between the icon and text */
+  }
+  

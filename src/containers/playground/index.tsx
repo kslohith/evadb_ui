@@ -14,16 +14,17 @@ const Playground: React.FC = () => {
         <Box sx={{ display: 'flex' }}>
             <LeftSidebar />
             <Box
-                sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}
+                component="main" sx={{ flexGrow: 1, p: 3 }}
             >
                 <QueryEditor
                     content={content}
                     setContent={setContent}
                     setResp={setResp}
+                    style={{ margin: '8px'}}
                 />
-                <QueryResponse resp={resp} />
+                <QueryResponse data={resp} />
             </Box>
-            <RightSidebar />
+            {/* <RightSidebar /> */}
         </Box>
     )
 }
